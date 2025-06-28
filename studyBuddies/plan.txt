@@ -1,0 +1,11 @@
+Idea: 
+-The idea for this project will be to create a group study buddy website/app. The app will allow you to create or join study spaces with your friends or just create one for yourself.
+You can then enable the AI users in which it will allow AI generated people to join. You then can interact with them like your friends in order to study or brainstorm.
+-There should be a whiteboard that you all can use
+-There should be modifications you can make to the AI to make them give you answers or be vague
+-There should me profile settings to change avatar or voice or icon or whatever
+
+-first page will be landing page where you see the features and login
+-then you go to your dashboard where you can create or join
+-then theres the actual room where itll be like discord in appearance with a chat and file upload etc
+-settings/profile page where you can change settings. Maybe even combine these pages with the dashboard page to make everything neat.\
