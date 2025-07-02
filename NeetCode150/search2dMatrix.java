@@ -35,7 +35,7 @@ public class search2dMatrix {
         int topRow = 0;
         int bottomRow = matrix.length - 1;
         while (topRow <= bottomRow) {
-            int midRow = topRow + (bottomRow - topRow) / 2;
+            int midRow = topRow + bottomRow / 2;
             if (matrix[midRow][0] <= target && matrix[midRow][matrix[0].length - 1] >= target) {
                 int left = 0;
                 int right = matrix[midRow].length - 1;
