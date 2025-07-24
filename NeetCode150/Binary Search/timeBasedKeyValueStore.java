@@ -34,7 +34,11 @@ public class timeBasedKeyValueStore {
         }
         TreeMap<Integer, String> timeMap = map.get(key); 
         Map.Entry<Integer, String> entry = timeMap.floorEntry(timestamp);
-        return entry == null ? "" : entry.getValue();
+        if (entry == null) {
+            return "";
+        } else {
+            return entry.getValue();
+        }
     }
 
 
