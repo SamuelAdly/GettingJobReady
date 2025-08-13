@@ -52,31 +52,23 @@ public class reverseLinkedList {
         return prev;
     }
 
-    private static void printList(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
-
     public static void main(String[] args) {
         reverseLinkedList sol = new reverseLinkedList();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         System.out.print("Original: ");
-        printList(head);
+        ListNode.printList(head);
 
         ListNode rec = sol.reverseListRecursion(head);
         System.out.print("Recursion reversed: ");
-        printList(rec);
+        ListNode.printList(rec);
 
         ListNode back = sol.reverseListRecursion(rec);
         System.out.print("Original again: ");
-        printList(back);
+        ListNode.printList(back);
 
         ListNode it = sol.reverseListIteration(back);
         System.out.print("Iteration reversed: ");
-        printList(it);
+        ListNode.printList(it);
     }
 }

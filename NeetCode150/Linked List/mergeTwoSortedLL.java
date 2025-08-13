@@ -66,30 +66,22 @@ public class mergeTwoSortedLL {
         return temp.next;
     }
 
-    private static void printList(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
-        System.out.println();
-    }
-
     public static void main(String[] args) {
         mergeTwoSortedLL sol = new mergeTwoSortedLL();
         ListNode list1R = new ListNode(1, new ListNode(2, new ListNode(4)));
         ListNode list2R = new ListNode(1, new ListNode(3, new ListNode(5)));
         System.out.print("List 1: ");
-        printList(list1R);
+        ListNode.printList(list1R);
         System.out.print("List 2: ");
-        printList(list2R);
+        ListNode.printList(list2R);
         System.out.println("Expected: [1,1,2,3,4,5]");
         System.out.print("Recursive Actual: ");
-        printList(sol.mergeTwoListsRecursion(list1R, list2R));
+        ListNode.printList(sol.mergeTwoListsRecursion(list1R, list2R));
 
         ListNode list1I = new ListNode(1, new ListNode(2, new ListNode(4)));
         ListNode list2I = new ListNode(1, new ListNode(3, new ListNode(5)));
         System.out.print("Iterative Actual: ");
-        printList(sol.mergeTwoListsIteration(list1I, list2I));
+        ListNode.printList(sol.mergeTwoListsIteration(list1I, list2I));
     }
 
 }
