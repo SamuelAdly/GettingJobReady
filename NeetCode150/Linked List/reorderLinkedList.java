@@ -44,8 +44,51 @@ public class reorderLinkedList {
         head.next = null;
     }
 
-    public void reorderListBest(ListNode head) {
 
+    /*
+     * This solution takes O(n) time but O(1) space 
+     * first we start off as usual making sure that the linked list is even large enough for us to reorder
+     * then we use the slow and fast pointer approach to locate the middle of the linked list
+     * By the time the fast pointer reaches the end it would mean that the slow is half way across the linked list (AKA the Middle)
+     * this is simply done using a while loop while we are not at null (end for linked lists) we move slow by 1 and fast by 2
+     * Next we want to reverse the right side of the linked list
+     * we set the second pointer to be the next node of the slow pointer which is the middle of the linked list
+     * we also set the previous pointer to be the next node of the slow pointer but we set it to null so that we can reverse the linked list
+     * we then use a while loop to reverse the right side of the linked list by setting the next pointer of the second node to be the previous node
+     * Finally we need to merge the linked list by doing left right left right and so on
+     * so we create a new listnode called first and assign it to the head meaning that will be our left/first node to be added
+     * second will become equal to prev which is the right side of the linked list
+     * we then use a while loop to merge the linked list by setting the next pointer of the first node to be the second node
+     * then we set the first node to be the next node of the first node
+     * then we set the second node to be the next node of the second node
+     * this will continue until the second node is null meaning that we have reached the end of the linked list
+     */
+    public void reorderListBest(ListNode head) {
+        if (head == null || head.next == null) return;
+
+        ListNode slow = head, fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode second = slow.next, prev = slow.next = null;
+        while (second != null) {
+            ListNode temp = second.next;
+            second.next = prev;
+            prev = second;
+            second = temp;
+        }
+
+        ListNode first = head;
+        second = prev;
+        while (second != null) {
+            ListNode temp1 = first.next, temp2 = second.next;
+            first.next = second;
+            second.next = temp1;
+            first = temp1;
+            second = temp2;
+        }
     }
 
 
