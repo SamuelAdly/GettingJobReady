@@ -44,12 +44,26 @@ public class reorderLinkedList {
         head.next = null;
     }
 
+    public void reorderListBest(ListNode head) {
+
+    }
+
 
     public static void main(String[] args) {
         reorderLinkedList sol = new reorderLinkedList();
         ListNode test1 = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
+        ListNode test2 = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
         
-        sol.reorderList(test1);
+        System.out.println("Reorder Linked List Test O(n) time and space \nOriginal: ");
         ListNode.printList(test1);
+        sol.reorderList(test1);
+        System.out.println("Reordered: ");
+        ListNode.printList(test1);
+
+        System.out.println("Reorder Linked List Test O(n) time and O(1) space \nOriginal: ");
+        ListNode.printList(test2);
+        sol.reorderListBest(test2);
+        System.out.println("Reordered: ");
+        ListNode.printList(test2);
     }
 }
