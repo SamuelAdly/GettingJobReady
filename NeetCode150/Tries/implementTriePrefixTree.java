@@ -45,7 +45,7 @@ public class implementTriePrefixTree {
         TrieNode cur = root;
         char[] wordArr = word.toCharArray();
         for (int i = 0; i < wordArr.length; i++) {
-            if (!cur.children.containsKey(wordArr[i])) return false;
+            if (cur.children.containsKey(wordArr[i]) == false) return false;
             cur = cur.children.get(wordArr[i]);
         }
         return cur.endOfWord;
